@@ -125,4 +125,14 @@ STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            # "hosts": [('127.0.0.1', 6379)],
+            "hosts" :  [('redis://:7hQDZPHHWXWK17AvG2SmpUTKqTvc6Rv9@redis-10364.c1.asia-northeast1-1.gce.cloud.redislabs.com:10364')],
+        },
+    },
+}
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
