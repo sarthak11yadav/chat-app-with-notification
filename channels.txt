@@ -1,0 +1,27 @@
+socket-ip adress port and protocol
+
+web socket-set of rules at application layer
+are used to establish a bidirectional connection between user and server and server can communicate with user by itself without request.
+
+django channels-it is a ds like queue it handles req one by one.
+
+redis--message broker(store req.).Channel layer.
+cache service for fast retrieval and storeage of data.
+
+For http-- views.py urls.py http://
+For web sockets--consumers.py routing.py ws://
+
+to establish connections between 2 consumerobjects we need something in b/w that is channel layer.
+This channel stores the consumerobjects by giving them a name known as channel name.
+Now when we create a group/room and give it a name all these channel names are connected to that respective group/room name
+And for storing this data/information we use redis that is channel layer.
+
+channel layer--A channel layer is a kind of communication system. 
+It allows multiple consumer instances to talk with each other, and with other parts of Django.
+
+A channel is a mailbox where messages can be sent to. 
+Each channel has a name. Anyone who has the name of a channel can send a message to the channel.
+
+A group is a group of related channels. A group has a name. 
+Anyone who has the name of a group can add/remove a channel to the group by name and send a message to all channels in the group. 
+It is not possible to enumerate what channels are in a particular group.
